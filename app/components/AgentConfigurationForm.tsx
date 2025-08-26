@@ -3,9 +3,14 @@
 import { useState } from "react";
 
 interface AgentConfigurationFormProps {
-  paperId: string;
-  parsedContent: any;
-  onConfigurationComplete: (config: any) => void;
+  paper: {
+    paperId: string;
+    title: string;
+    status: 'uploading' | 'parsing' | 'ready' | 'error';
+    uploadedAt: string;
+    parsedContent?: any;
+  };
+  onGenerateAgent: (paper: any, config: any) => Promise<void>;
 }
 
 interface Parameters {
@@ -13,9 +18,8 @@ interface Parameters {
 }
 
 export function AgentConfigurationForm({
-  paperId,
-  parsedContent,
-  onConfigurationComplete,
+  paper,
+  onGenerateAgent,
 }: AgentConfigurationFormProps) {
   const [parameters, setParameters] = useState<Parameters>({
     temperature: 0.7,
@@ -32,20 +36,18 @@ export function AgentConfigurationForm({
     }));
   };
 
-  const handleGenerateAgent = async () => {
+  const handleGenerateAgentClick = async () => {
     setIsGenerating(true);
     try {
       const config = {
-        paperId,
         agentType,
         parameters,
-        parsedContent,
       };
       
       // Simulate agent generation
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      onConfigurationComplete(config);
+      await onGenerateAgent(paper, config);
     } catch (error) {
       console.error("Error generating agent:", error);
     } finally {
@@ -91,7 +93,7 @@ export function AgentConfigurationForm({
         </div>
 
         <button
-          onClick={handleGenerateAgent}
+          onClick={handleGenerateAgentClick}
           disabled={isGenerating}
           className="btn-primary w-full"
         >
