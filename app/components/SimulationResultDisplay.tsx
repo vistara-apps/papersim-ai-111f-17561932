@@ -1,4 +1,3 @@
-
 "use client";
 
 interface AgentConfig {
@@ -112,7 +111,7 @@ export function SimulationResultDisplay({ agentConfig, results }: SimulationResu
                 {Object.entries(results.parameters || {}).map(([key, value]) => (
                   <div key={key} className="flex justify-between">
                     <span className="text-secondary-text">{key}:</span>
-                    <span className="font-mono text-sm">{value.toString()}</span>
+                    <span className="font-mono text-sm">{String(value)}</span>
                   </div>
                 ))}
               </div>

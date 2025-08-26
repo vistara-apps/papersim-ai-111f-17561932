@@ -1,7 +1,8 @@
 FROM node:24-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev
+# Install all dependencies including dev dependencies needed for build
+RUN npm ci
 COPY . .
 RUN npm run build
 
