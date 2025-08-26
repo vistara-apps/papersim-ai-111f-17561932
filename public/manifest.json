@@ -1,0 +1,14 @@
+{
+  "name": "PaperSim AI",
+  "description": "PaperSim AI is a Base Mini App built with Zara.",
+  "image": "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=OG",
+  "external_url": "https://111f0e73-2338-4f67-a751-26428061a0bd.vistara.dev",
+  "properties": {
+    "app": {
+      "name": "PaperSim AI",
+      "description": "PaperSim AI is a Base Mini App built with Zara.",
+      "url": "https://111f0e73-2338-4f67-a751-26428061a0bd.vistara.dev",
+      "icon": "https://0co.to/images/zara-2.png"
+    }
+  }
+}

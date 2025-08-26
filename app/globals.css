@@ -1,0 +1,75 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 220 13% 18%;
+    --accent: 240 5% 38%;
+    --bg: 220 13% 98%;
+    --surface: 0 0% 100%;
+    --secondary-text: 220 13% 40%;
+    --text: 220 13% 18%;
+    --border: 220 13% 91%;
+    --muted: 220 13% 96%;
+  }
+  
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  body {
+    @apply bg-bg text-text font-normal;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-base ease-smooth shadow-card;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface hover:bg-muted text-primary border border-border px-4 py-2 rounded-md transition-all duration-base ease-smooth;
+  }
+  
+  .card {
+    @apply bg-surface border border-border rounded-lg p-6 shadow-card transition-all duration-base ease-smooth;
+  }
+  
+  .input-field {
+    @apply bg-surface border border-border rounded-md px-3 py-2 text-text placeholder:text-secondary-text focus:border-accent focus:outline-none transition-all duration-base ease-smooth;
+  }
+  
+  .container-app {
+    @apply max-w-3xl mx-auto px-4;
+  }
+  
+  .text-display {
+    @apply text-2xl font-semibold;
+  }
+  
+  .text-heading {
+    @apply text-lg font-medium;
+  }
+  
+  .text-body {
+    @apply text-base font-normal leading-7;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
