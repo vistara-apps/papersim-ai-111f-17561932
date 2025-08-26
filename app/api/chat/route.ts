@@ -1,9 +1,11 @@
-
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
+// For build purposes, we'll use a dummy key if none is provided
+const apiKey = process.env.OPENAI_API_KEY || process.env.OPENROUTER_API_KEY || 'sk-dummy-key-for-build-purposes-only';
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || process.env.OPENROUTER_API_KEY,
+  apiKey,
   baseURL: process.env.OPENROUTER_API_KEY ? "https://openrouter.ai/api/v1" : undefined,
   dangerouslyAllowBrowser: true,
 });
