@@ -20,7 +20,10 @@
     "wagmi": "^2.14.11",
     "pino-pretty": "^10.3.1",
     "openai": "^4.58.1",
-    "date-fns": "^2.30.0"
+    "date-fns": "^2.30.0",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8",
+    "autoprefixer": "^10.4.21"
   },
   "devDependencies": {
     "@types/node": "^22.13.10",
@@ -28,9 +31,6 @@
     "@types/react-dom": "^18",
     "typescript": "^5",
     "eslint": "^8",
-    "eslint-config-next": "15.3.3",
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8",
-    "autoprefixer": "^10.4.21"
+    "eslint-config-next": "15.3.3"
   }
 }
